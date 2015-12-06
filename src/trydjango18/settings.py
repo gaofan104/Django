@@ -27,7 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'gaofan1004@gmail.com'
+EMAIL_HOST_PASSWORD = 'Dier123456'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
+
+# if using gmail, you will need to unlock Captcha to enable Django to send for you
+# https://accounts.google.com/displayunlockcaptcha
 # Application definition
 
 INSTALLED_APPS = (
@@ -38,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'newsletter',
+    'stockManagement'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -101,3 +110,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root")
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static_in_proj", "our_static"),
+    # os.path.join(BASE_DIR, "static_in_env"),
+    # '/var/www/static/',
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")
