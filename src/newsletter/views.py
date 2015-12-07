@@ -7,16 +7,10 @@ def home(request):
 	title = 'Welcome'
 	# if request.user.is_authenticated():
 	# 	title = "My Title %s" %(request.user)
-
-
 	#add a form
-
-
 	# if request.method == "POST":
 	# 	print request.POST
 	form = SignUpForm(request.POST or None)
-
-
 	context = {
 			"title" : title,
 			"form" : form,
@@ -32,8 +26,7 @@ def home(request):
 			"title" : "Thank you",
 		}
 
-
-	return render(request, "base.html", context)
+	return render(request, "home.html", context)
 
 def contact(request):
 
