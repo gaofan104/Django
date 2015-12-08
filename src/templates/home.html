@@ -5,33 +5,53 @@
 	Welcome
 {% endblock %}
 
-{% block jumbotron %}
+<style>
+{% block style %}
+.text_align_center {
+	text-align: center;
+}
+.jumbotron{
+	background-color: #723C3C;
+}
+{% endblock %}
+</style>
 
+{% block jumbotron %}
 <div class="jumbotron">
-	<h1>Navbar example</h1>
-	<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-	<p>To see the difference between static and fixed top navbars, just scroll.</p>
-	<p>
- 		 <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-	</p>
+	<div class="container">
+		<div class = "row">
+			<div class = "col-sm-6">
+				<h1>Navbar example</h1>
+				<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+				<p>
+			 		 <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+				</p>
+			</div>
+			<div class = 'col-sm-6' style="background-color:black;height:300px;">
+
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}
 
 {% block content %}
 <div class = "row">
-	<div class = "col-md-4">.col-md-1
-		<h1>{{ title }}</h1>
-
-		{{ user }}
-
-		{{ request.user }}
-
+	<div class = "col-sm-3 pull-right">
+		<h1 class = "text_align_center">{{ title }}</h1>
 		<form method='POST' action=''>{% csrf_token %}
-
 			{{ form|crispy }}
-
 			<input class='btn btn-primary' type='submit' value='Sign Up'>
-
 		</form>
+	</div>
+	<div class = "col-sm-3 pull-right">
+		<p class = "text_align_center">Built with Django &amp; Bootstrap</p>
+	</div>
+	<div class = "col-sm-3 pull-right">
+		<p class = "text_align_center">Built with Django &amp; Bootstrap</p>
+	</div>
+	<div class = "col-sm-3 pull-right">
+		<p class = "text_align_center">Built with Django &amp; Bootstrap</p>
+	</div>
 </div>
 {% endblock %}

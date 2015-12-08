@@ -29,7 +29,7 @@ def home(request):
 	return render(request, "home.html", context)
 
 def contact(request):
-
+	title = 'Contact Us'
 	form = ContactForm(request.POST or None)
 
 	if form.is_valid():
@@ -42,7 +42,9 @@ def contact(request):
 		to_email = [from_email]
 		contact_message = "%s: %s via %s"%(form_full_name, form_message, from_email)
 		send_mail(subject, contact_message, from_email, to_email, fail_silently=False)
+
 	context = {
 		"form": form,
+		"title": title,
 	}
 	return render(request, "form.html", context)
