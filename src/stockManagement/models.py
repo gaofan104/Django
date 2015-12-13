@@ -11,7 +11,7 @@ class Item(models.Model):
 
 	def admin_image(self):
 		print self.image.url
-		return '<img src="%s"/>' % self.image.url
+		return '<img src="%s" height="40"/>' % self.image.url
 	admin_image.short_description = 'Image'
 	admin_image.allow_tags = True
 
